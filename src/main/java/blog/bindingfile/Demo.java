@@ -18,7 +18,7 @@ public class Demo {
 
         Unmarshaller unmarshaller = jc.createUnmarshaller();
         StreamSource json = new StreamSource(new FileInputStream("src/main/resources/blog/bindingfile/input.json"));
-        Customer customer = (Customer) unmarshaller.unmarshal(json, Customer.class).getValue();
+        Customer customer = unmarshaller.unmarshal(json, Customer.class).getValue();
 
         Marshaller marshaller = jc.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
